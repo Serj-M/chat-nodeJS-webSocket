@@ -1,0 +1,20 @@
+{
+  "name": "node-chat",
+  "version": "1.0.0",
+  "description": "My first Node.js chat",
+  "main": "_index.js",
+  "scripts": {
+    "start": "node _index.js",
+    "dev": "nodemon _index.js"
+  },
+  "dependencies": {
+    "socket.io": "latest",
+    "express": "latest",
+    "pug": "latest"
+  },
+  "author": "Serj Makshakov <dus-f@mail.ru>",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
