@@ -21,6 +21,7 @@
     overflow-y: auto;
 }
 #field{
+    box-sizing: border-box;
     width: 100%;
     border: solid 3px rgb(122, 128, 122);
     padding: 10px 20px;
@@ -49,4 +50,23 @@
     color: rgb(207, 125, 17);
     margin: 0 20px 20px;
     float: right;
+}
+
+@media screen and (max-width:768px) {
+    * {
+        font: 14px Helvetica, Arial;
+        line-height: 1.2;
+    }
+    .wrap{
+        padding: 10px;
+    }
+    #send{
+        padding: 10px 10px;
+    }
+    #field{
+        padding: 10px 10px;
+    }
+    #content{
+        padding: 10px 10px;
+    }
 }
