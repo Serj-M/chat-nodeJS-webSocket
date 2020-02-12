@@ -4,7 +4,7 @@ let content;
 let send;
 
 window.onload = function(){
-  client = io.connect("http://localhost");
+  client = io.connect("/");
 
   input = document.getElementById("field"); // input поле ввода сообщения 
   content = document.getElementById("content"); // div
