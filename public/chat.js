@@ -1,14 +1,12 @@
-//let form;
 let client;
 let input;
 let content;
 let send;
 
 window.onload = function(){
-  client = io.connect("http://localhost:8080");
+  client = io.connect("http://localhost");
 
-  //form = document.getElementById("form"); // не использую пока
-  input = document.getElementById("field"); // inpun поле ввода ссобщения 
+  input = document.getElementById("field"); // input поле ввода сообщения 
   content = document.getElementById("content"); // div
   send = document.getElementById("send"); // button 
 
@@ -17,7 +15,7 @@ window.onload = function(){
   //узнаем имя нового участника
   let name = prompt('Как вас зовут?', 'Имя');
   if(name) { 
-    // отпраляем на сервер
+    // отправляем на сервер
     client.emit('hello', {'name': name}); 
   }  
 
@@ -30,18 +28,16 @@ window.onload = function(){
     // формируем содержимое div
     messages.forEach(function(item){
       //послать через цикл в div
-      content.innerHTML += item + "<br>"; 
+      content.innerHTML += item + "<br>";
     });
   });
 
 //выбрать введённые пользователем данные из текстового поля
 //послать выбранные данные на сервер в сообщении под именем 'send' 
   send.onclick = function(){
-    //console.log("here");
-    // содержимое input в строковую переменную 
-    let value = input.value;
-    // отправка сообщения на сервер
-    client.emit('send', {'message': value});
+    // отправка содержимого input на сервер
+    client.emit('send', {'message': input.value});
+    input.value = '';
     return false; // проверка
   }
 };
